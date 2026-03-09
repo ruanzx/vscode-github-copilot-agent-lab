@@ -25,5 +25,6 @@
       "label": "FastAPI Dev Server",
       "onAutoForward": "notify"
     }
-  }
+  },
+  "remoteUser": "root"
 }
