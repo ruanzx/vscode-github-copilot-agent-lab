@@ -79,8 +79,12 @@ Prefer component classes over composing bare utility classes for new UI work.
 |---|---|
 | `.start-screen` | Full-page start screen wrapper (dot-grid + radial glow background) |
 | `.start-card` | Centered content card on start screen |
-| `.start-logo` | H1 logo — Space Mono, `span` child gets `--accent` color |
+| `.start-hero` | Wrapper for logo, tagline, and pitch line |
+| `.start-logo` | H1 logo — Space Mono, `span` child gets `--accent` color + glow |
 | `.start-tagline` | Uppercase mono tagline below logo |
+| `.start-pitch` | One-line value proposition sentence below tagline |
+| `.prompt-preview` | Wrapping flex row of sample prompt chips |
+| `.prompt-chip` | Individual mono chip showing a sample board prompt |
 | `.how-to-play` | Instruction card with dark surface border |
 | `.how-to-play-title` | Uppercase accent label inside instruction card |
 | `.how-to-play-list` | `<ul>` wrapper for step items |

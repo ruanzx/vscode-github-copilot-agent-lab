@@ -214,40 +214,75 @@ button:disabled {
     align-items: center;
     justify-content: center;
     min-height: 100%;
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 1.5rem;
     background-color: var(--bg);
     background-image:
-        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(14, 165, 233, 0.12) 0%, transparent 70%),
-        radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.04) 1px, transparent 0);
-    background-size: 100% 100%, 32px 32px;
+        radial-gradient(ellipse 90% 55% at 50% -5%, rgba(14, 165, 233, 0.15) 0%, transparent 65%),
+        radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.035) 1px, transparent 0);
+    background-size: 100% 100%, 28px 28px;
 }
 
 .start-card {
     width: 100%;
-    max-width: 22rem;
+    max-width: 24rem;
+}
+
+/* Hero: logo + tagline + pitch line */
+.start-hero {
+    margin-bottom: 1.75rem;
 }
 
 .start-logo {
     font-family: var(--font-mono);
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 700;
     color: var(--text-primary);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
     margin: 0 0 0.25rem;
     line-height: 1;
 }
 
 .start-logo span {
     color: var(--accent);
+    text-shadow: 0 0 28px rgba(14, 165, 233, 0.5);
 }
 
 .start-tagline {
     font-family: var(--font-mono);
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     color: var(--text-muted);
-    letter-spacing: 0.18em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    margin: 0 0 2.5rem;
+    margin: 0 0 1rem;
+}
+
+.start-pitch {
+    font-size: 1.0625rem;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* Prompt chip preview strip */
+.prompt-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+}
+
+.prompt-chip {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    color: var(--text-muted);
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.25rem 0.625rem;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    transition: color 200ms, border-color 200ms;
 }
 
 .how-to-play {
@@ -255,7 +290,7 @@ button:disabled {
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     padding: 1.25rem 1.5rem;
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.5rem;
 }
 
 .how-to-play-title {
@@ -274,27 +309,27 @@ button:disabled {
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.625rem;
+    gap: 0.75rem;
 }
 
 .how-to-play-list li {
     display: flex;
     align-items: flex-start;
-    gap: 0.625rem;
-    font-size: 0.875rem;
+    gap: 0.75rem;
+    font-size: 0.9375rem;
     color: var(--text-secondary);
     line-height: 1.4;
 }
 
 .step-num {
     flex-shrink: 0;
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1.5rem;
+    height: 1.5rem;
     border-radius: 50%;
     background-color: var(--surface-2);
     border: 1px solid var(--border-hi);
     font-family: var(--font-mono);
-    font-size: 0.625rem;
+    font-size: 0.6875rem;
     font-weight: 700;
     color: var(--accent);
     display: flex;
@@ -310,24 +345,26 @@ button:disabled {
     font-family: var(--font-mono);
     font-weight: 700;
     font-size: 0.9375rem;
-    letter-spacing: 0.06em;
-    padding: 0.875rem 2rem;
+    letter-spacing: 0.08em;
+    padding: 0.9375rem 2rem;
     border-radius: var(--radius-md);
-    transition: background-color 180ms ease, transform 100ms ease;
+    transition: background-color 180ms ease, box-shadow 180ms ease, transform 100ms ease;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 0 24px rgba(14, 165, 233, 0.3);
 }
 
 .btn-start::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, transparent 55%);
     pointer-events: none;
 }
 
 .btn-start:active {
     background-color: var(--accent-dim);
+    box-shadow: none;
     transform: scale(0.98);
 }
 
