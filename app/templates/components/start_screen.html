@@ -1,25 +1,52 @@
 <div id="game-container">
-<div class="flex flex-col items-center justify-center min-h-full p-6 bg-gray-50">
-    <div class="text-center max-w-sm">
-        <h1 class="text-4xl font-bold text-gray-900 mb-2">Soc Ops</h1>
-        <p class="text-lg text-gray-600 mb-8">Social Bingo</p>
+<div class="flex flex-col items-center justify-center min-h-full p-6 start-screen--terminal">
+    <div class="max-w-sm w-full">
 
-        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 mb-8">
-            <h2 class="font-semibold text-gray-800 mb-3">How to play</h2>
-            <ul class="text-left text-gray-600 text-sm space-y-2">
+        <div class="term-line" style="animation-delay: 0s">
+            <span class="term-prefix">INIT</span>
+            <div class="start-logo" style="text-align: center; margin-bottom: 1.5rem; color: var(--accent);">
+                <h1 class="text-4xl font-bold mb-2">Soc<span>Ops</span></h1>
+                <p style="font-family: var(--font-mono); font-size: 0.75rem; opacity: 0.6; letter-spacing: 0.08em;">Social Bingo // Field Terminal v1.0</p>
+            </div>
+        </div>
+
+        <div class="term-line" style="animation-delay: 0.3s">
+            <span class="term-prefix">SCAN — loading prompts</span>
+            <div class="term-chip-row">
+                <span class="prompt-chip">bikes to work</span>
+                <span class="prompt-chip">has lived in another country</span>
+                <span class="prompt-chip">has a pet</span>
+                <span class="prompt-chip">prefers tea over coffee</span>
+                <span class="prompt-chip">plays an instrument</span>
+                <span class="prompt-chip">speaks more than 2 languages</span>
+                <span class="prompt-chip">has run a marathon</span>
+                <span class="prompt-chip">was born in a different state</span>
+                <span class="prompt-chip">has met a celebrity</span>
+                <span class="prompt-chip">can juggle</span>
+            </div>
+        </div>
+
+        <div class="term-line how-to-play--terminal" style="animation-delay: 0.6s">
+            <span class="term-prefix">BRIEF</span>
+            <h2 class="font-semibold mb-3" style="color: var(--accent);">How to play</h2>
+            <ul class="text-left text-sm space-y-2" style="font-family: var(--font-mono); opacity: 0.8;">
                 <li>• Find people who match the questions</li>
                 <li>• Tap a square when you find a match</li>
                 <li>• Get 5 in a row to win!</li>
             </ul>
         </div>
 
-        <button
-            hx-post="/start"
-            hx-target="#game-container"
-            hx-swap="outerHTML"
-            class="w-full bg-accent text-white font-semibold py-4 px-8 rounded-lg text-lg active:bg-accent-light transition-colors">
-            Start Game
-        </button>
+        <div class="term-line" style="animation-delay: 0.9s">
+            <span class="term-prefix">EXEC</span>
+            <button
+                hx-post="/start"
+                hx-target="#game-container"
+                hx-swap="outerHTML"
+                class="term-prompt">
+                ./start_game.sh
+            </button>
+        </div>
+
     </div>
 </div>
 </div>
