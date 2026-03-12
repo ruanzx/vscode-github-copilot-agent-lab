@@ -161,3 +161,115 @@ button:disabled {
 .animate-\[bounce_0\.5s_ease-out\] {
     animation: bounce 0.5s ease-out;
 }
+
+/* == Start Screen Terminal Theme == */
+
+:root {
+    --font-mono: 'Menlo', 'Monaco', 'Courier New', monospace;
+}
+
+@keyframes type-in {
+    from { max-height: 0; opacity: 0; }
+    to   { max-height: 200px; opacity: 1; }
+}
+
+@keyframes blink-cursor {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0; }
+}
+
+@keyframes crt-flicker {
+    0%,100% { opacity: 1;   }
+    92%     { opacity: 1;   }
+    93%     { opacity: 0.85;}
+    94%     { opacity: 1;   }
+    98%     { opacity: 1;   }
+    99%     { opacity: 0.9; }
+}
+
+.start-screen--terminal {
+    --accent: #22d65a;
+    --accent-dim: #16a34a;
+    --accent-glow: rgba(34, 214, 90, 0.18);
+    background-color: #060d06;
+    color: #b8ffb8;
+    background-image:
+        radial-gradient(ellipse 90% 55% at 50% -5%, rgba(34, 214, 90, 0.12) 0%, transparent 65%),
+        radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.025) 1px, transparent 0),
+        radial-gradient(ellipse 100% 100% at 50% 50%, transparent 60%, rgba(0,0,0,0.5) 100%);
+    background-size: 100% 100%, 28px 28px, 100% 100%;
+    animation: crt-flicker 8s linear infinite;
+}
+
+.term-line {
+    overflow: hidden;
+    animation: type-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.term-prompt {
+    width: 100%;
+    background: transparent;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    padding: 0.9375rem 0;
+    border-top: 1px solid var(--accent);
+    border-radius: 0;
+    text-align: left;
+    transition: background-color 180ms ease;
+    position: relative;
+}
+.term-prompt::before {
+    content: '> ';
+    opacity: 0.6;
+}
+.term-prompt::after {
+    content: '_';
+    animation: blink-cursor 1s step-end infinite;
+    margin-left: 2px;
+}
+.term-prompt:active { background-color: rgba(34, 214, 90, 0.08); }
+
+.term-prefix {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    opacity: 0.6;
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.term-chip-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1.75rem;
+    max-height: 7rem;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent);
+    mask-image: linear-gradient(to bottom, black 60%, transparent);
+}
+.term-chip-row .prompt-chip {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    color: var(--accent);
+    border-color: transparent;
+    background: transparent;
+    padding: 0;
+    letter-spacing: 0.03em;
+}
+.term-chip-row .prompt-chip::before {
+    content: '$ ';
+    opacity: 0.4;
+}
+
+.how-to-play--terminal {
+    background: transparent;
+    border: none;
+    border-top: 1px solid rgba(34, 214, 90, 0.2);
+    border-radius: 0;
+    padding: 1rem 0;
+}
