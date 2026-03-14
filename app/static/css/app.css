@@ -10,6 +10,276 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
+/* ============================================================
+   CYBERPUNK LANDING PAGE STYLES
+   ============================================================ */
+
+:root {
+    --neon-cyan:   #00f0ff;
+    --neon-pink:   #ff2d78;
+    --neon-yellow: #f5ff00;
+    --bg-void:     #050510;
+    --bg-deep:     #0a0820;
+    --surface:     rgba(0, 240, 255, 0.06);
+    --border-neon: rgba(0, 240, 255, 0.35);
+}
+
+/* Atmospheric background */
+.landing-bg {
+    position: relative;
+    background:
+        radial-gradient(ellipse 80% 60% at 50% 0%,   rgba(0,240,255,0.10) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 80% 100%, rgba(255,45,120,0.12) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 60% at 10% 60%,  rgba(245,255,0,0.05)  0%, transparent 60%),
+        var(--bg-void);
+    overflow: hidden;
+}
+
+/* Scanline overlay */
+.scanlines {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(0,240,255,0.03) 3px,
+        rgba(0,240,255,0.03) 4px
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Content sits above overlay */
+.landing-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 22rem;
+}
+
+/* Badge pill */
+.landing-badge {
+    display: inline-block;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    color: var(--neon-cyan);
+    border: 1px solid var(--border-neon);
+    border-radius: 999px;
+    padding: 0.25rem 0.85rem;
+    background: rgba(0,240,255,0.08);
+    text-transform: uppercase;
+}
+
+/* Hero title */
+.landing-title {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 3.5rem;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    color: #e8eeff;
+    text-shadow:
+        0 0 10px rgba(0,240,255,0.6),
+        0 0 30px rgba(0,240,255,0.25);
+    margin: 0.25rem 0 0.5rem;
+}
+
+.title-accent {
+    color: var(--neon-cyan);
+    text-shadow:
+        0 0 8px var(--neon-cyan),
+        0 0 25px rgba(0,240,255,0.5),
+        0 0 50px rgba(0,240,255,0.2);
+}
+
+/* Subtitle */
+.landing-subtitle {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.45em;
+    color: var(--neon-pink);
+    text-shadow: 0 0 8px rgba(255,45,120,0.7);
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* Decorative mini bingo grid */
+.mini-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3px;
+    max-width: 14rem;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.5;
+}
+
+.mini-cell {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.55rem;
+    font-family: 'Share Tech Mono', monospace;
+    border: 1px solid rgba(0,240,255,0.2);
+    background: rgba(0,240,255,0.03);
+    color: rgba(0,240,255,0.4);
+    border-radius: 3px;
+}
+
+.mini-cell.marked {
+    color: var(--neon-cyan);
+    background: rgba(0,240,255,0.10);
+    border-color: rgba(0,240,255,0.5);
+    text-shadow: 0 0 6px var(--neon-cyan);
+}
+
+.mini-cell.free {
+    color: var(--neon-yellow);
+    background: rgba(245,255,0,0.08);
+    border-color: rgba(245,255,0,0.4);
+    text-shadow: 0 0 6px var(--neon-yellow);
+    font-size: 0.4rem;
+    letter-spacing: 0.05em;
+}
+
+/* How to play card */
+.landing-card {
+    background: var(--surface);
+    border: 1px solid var(--border-neon);
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    text-align: left;
+    box-shadow: 0 0 20px rgba(0,240,255,0.05), inset 0 1px 0 rgba(0,240,255,0.1);
+}
+
+.landing-card-title {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--neon-cyan);
+    text-transform: uppercase;
+    margin: 0 0 0.75rem;
+}
+
+.landing-steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.landing-steps li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    color: rgba(200,215,255,0.85);
+}
+
+.step-num {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--neon-pink);
+    text-shadow: 0 0 6px rgba(255,45,120,0.6);
+    min-width: 1.5rem;
+}
+
+/* CTA button */
+.landing-btn {
+    position: relative;
+    width: 100%;
+    padding: 1rem 2rem;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    color: var(--bg-void);
+    background: var(--neon-cyan);
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.1s, box-shadow 0.2s;
+    box-shadow:
+        0 0 15px rgba(0,240,255,0.6),
+        0 0 40px rgba(0,240,255,0.2);
+    animation: btn-pulse 2.5s ease-in-out infinite;
+}
+
+.landing-btn:active {
+    transform: scale(0.97);
+}
+
+.btn-text {
+    position: relative;
+    z-index: 1;
+}
+
+.btn-glow {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+    transform: translateX(-100%);
+    animation: btn-shine 3s ease-in-out infinite 1s;
+}
+
+/* ============================================================
+   LANDING PAGE ENTRANCE ANIMATIONS
+   ============================================================ */
+
+@keyframes fade-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes grid-in {
+    from { opacity: 0; transform: scale(0.85); }
+    to   { opacity: 0.5; transform: scale(1); }
+}
+
+@keyframes btn-pulse {
+    0%, 100% { box-shadow: 0 0 15px rgba(0,240,255,0.6), 0 0 40px rgba(0,240,255,0.2); }
+    50%       { box-shadow: 0 0 25px rgba(0,240,255,0.9), 0 0 60px rgba(0,240,255,0.35); }
+}
+
+@keyframes btn-shine {
+    0%   { transform: translateX(-100%); }
+    60%  { transform: translateX(100%); }
+    100% { transform: translateX(100%); }
+}
+
+.hero-reveal   { animation: fade-up 0.6s ease-out 0.1s both; }
+.grid-reveal   { animation: grid-in 0.7s ease-out 0.35s both; }
+.card-reveal   { animation: fade-up 0.6s ease-out 0.55s both; }
+.btn-reveal    { animation: fade-up 0.6s ease-out 0.75s both; }
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-reveal,
+    .grid-reveal,
+    .card-reveal,
+    .btn-reveal {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .landing-btn {
+        animation: none;
+    }
+
+    .btn-glow {
+        animation: none;
+    }
+}
+
+
 /* Tailwind-like utility classes */
 .h-full { height: 100%; }
 .min-h-full { min-height: 100%; }
