@@ -1,25 +1,89 @@
 <div id="game-container">
-<div class="flex flex-col items-center justify-center min-h-full p-6 bg-gray-50">
-    <div class="text-center max-w-sm">
-        <h1 class="text-4xl font-bold text-gray-900 mb-2">Soc Ops</h1>
-        <p class="text-lg text-gray-600 mb-8">Social Bingo</p>
+<div class="start-screen start-screen--dossier">
+    <div class="start-card">
 
-        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 mb-8">
-            <h2 class="font-semibold text-gray-800 mb-3">How to play</h2>
-            <ul class="text-left text-gray-600 text-sm space-y-2">
-                <li>• Find people who match the questions</li>
-                <li>• Tap a square when you find a match</li>
-                <li>• Get 5 in a row to win!</li>
-            </ul>
+        <div class="start-hero dossier-entrance" style="animation-delay: 0s">
+            <h1 class="text-4xl font-bold mb-2" style="color: var(--accent)">Soc Ops</h1>
+            <p class="text-lg mb-4" style="color: var(--text-secondary)">Social Bingo</p>
+        </div>
+
+        <div class="prompt-ticker dossier-entrance" style="animation-delay: 0.12s" aria-hidden="true">
+            <div class="ticker-inner">
+                <span class="prompt-chip">bikes to work</span>
+                <span class="prompt-chip">has lived in another country</span>
+                <span class="prompt-chip">has a pet</span>
+                <span class="prompt-chip">prefers tea over coffee</span>
+                <span class="prompt-chip">plays an instrument</span>
+                <span class="prompt-chip">speaks more than 2 languages</span>
+                <span class="prompt-chip">has run a marathon</span>
+                <span class="prompt-chip">was born in a different state</span>
+                <span class="prompt-chip">has met a celebrity</span>
+                <span class="prompt-chip">can juggle</span>
+                <span class="prompt-chip">has been skydiving</span>
+                <span class="prompt-chip">loves cooking</span>
+                <span class="prompt-chip">has a garden</span>
+                <span class="prompt-chip">has traveled to Asia</span>
+                <span class="prompt-chip">is left-handed</span>
+                <span class="prompt-chip">has a twin</span>
+                <span class="prompt-chip">plays video games</span>
+                <span class="prompt-chip">does yoga</span>
+                <span class="prompt-chip">has a hidden talent</span>
+                <span class="prompt-chip">loves spicy food</span>
+                <span class="prompt-chip">has been on TV</span>
+                <span class="prompt-chip">collects something unique</span>
+                <span class="prompt-chip">has read a book this month</span>
+                <span class="prompt-chip">knows sign language</span>
+                <span class="prompt-chip">bikes to work</span>
+                <span class="prompt-chip">has lived in another country</span>
+                <span class="prompt-chip">has a pet</span>
+                <span class="prompt-chip">prefers tea over coffee</span>
+                <span class="prompt-chip">plays an instrument</span>
+                <span class="prompt-chip">speaks more than 2 languages</span>
+                <span class="prompt-chip">has run a marathon</span>
+                <span class="prompt-chip">was born in a different state</span>
+                <span class="prompt-chip">has met a celebrity</span>
+                <span class="prompt-chip">can juggle</span>
+                <span class="prompt-chip">has been skydiving</span>
+                <span class="prompt-chip">loves cooking</span>
+                <span class="prompt-chip">has a garden</span>
+                <span class="prompt-chip">has traveled to Asia</span>
+                <span class="prompt-chip">is left-handed</span>
+                <span class="prompt-chip">has a twin</span>
+                <span class="prompt-chip">plays video games</span>
+                <span class="prompt-chip">does yoga</span>
+                <span class="prompt-chip">has a hidden talent</span>
+                <span class="prompt-chip">loves spicy food</span>
+                <span class="prompt-chip">has been on TV</span>
+                <span class="prompt-chip">collects something unique</span>
+                <span class="prompt-chip">has read a book this month</span>
+                <span class="prompt-chip">knows sign language</span>
+            </div>
+        </div>
+
+        <div class="mission-steps dossier-entrance" style="animation-delay: 0.26s">
+            <div class="mission-step">
+                <div class="step-num">1</div>
+                <div class="mission-step-label">Find people who match</div>
+            </div>
+            <div class="mission-step">
+                <div class="step-num">2</div>
+                <div class="mission-step-label">Tap a square</div>
+            </div>
+            <div class="mission-step">
+                <div class="step-num">3</div>
+                <div class="mission-step-label">Get 5 in a row</div>
+            </div>
         </div>
 
         <button
             hx-post="/start"
             hx-target="#game-container"
             hx-swap="outerHTML"
-            class="w-full bg-accent text-white font-semibold py-4 px-8 rounded-lg text-lg active:bg-accent-light transition-colors">
+            class="btn-start dossier-entrance"
+            style="animation-delay: 0.4s">
             Start Game
         </button>
+
     </div>
 </div>
 </div>
